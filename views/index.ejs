@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Login + Registration</title>
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <div id="contant">
+            <h1>Login</h1>
+            <% if(messages.LoginErr) { %>
+            <% for (var x of messages.LoginErr) { %>
+            <h3><%= x %></h3>
+            <% } %>
+            <% } %>
+            <form action="/Login" method="POST" id="form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" class="form-control" placeholder="Your password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <br><br>
+            <h1>Registration</h1>
+            <% if(messages.RegistrationErr) { %>
+            <% for (var x of messages.RegistrationErr) { %>
+            <h3><%= x %></h3>
+            <% } %>
+            <% } %>
+            <form action="/Registration" method="POST" id="form">
+                <div class="form-group">
+                    <label for="Fname">First Name:</label>
+                    <input type="text" name="Fname" class="form-control" placeholder="Your First Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="Lname">Last Name:</label>
+                    <input type="text" name="Lname" class="form-control" placeholder="Your Last Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                        <label for="BDate">Your Birthday:</label>
+                        <input type="date" name="BDate" class="form-control" required>
+                    </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" class="form-control" placeholder="Your password" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
